@@ -26,15 +26,15 @@ Changed files compared to regular Rails app:
 
 1. Copy `docker-compose.yml` into your own application.
 
-2. Copy `Dockerfile` into your own application
+2. Copy `Dockerfile` into your own application.
 
 3. Edit `docker-compose.yml` and change **railsdockercompose_web** to
-   **yourapplication_web** for the `image:` keys under `web:` and `sidekiq:`
+   **yourapplication_web** for the `image:` keys under `web:` and `sidekiq:`.
 
 Now your own application is set up and you can follow the regular development
 environment instructions:
 
-## Run your app's development environment
+## Start your development environment
 
 *You could copy-paste the following steps  into your own Rails app's README, so
 that anyone contributing knows how to get a development environment up and
