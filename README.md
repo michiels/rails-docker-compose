@@ -53,15 +53,7 @@ environment:
 ```
 $ cd ~/path/to/my/application
 $ docker-compose run --rm web /bin/bash
-# rails db:create
-# rails db:schema:load
-```
-
-Optionally, run the seeds to already have an initial user and if you don't
-need to test the onboarding:
-
-```
-# rails db:seed
+# rails db:setup
 ```
 
 Open up another tab in your terminal, or exit the shell session inside the
@@ -76,8 +68,21 @@ $ docker-compose up
 To stop your local development environment again where you're finished working:
 
 ```
-$ docker-compose down
+$ docker-compose stop
 ```
+
+### Migrating, running tests, etc.
+
+To do any regular Rails task like creating migrations, running tests, or
+generating models and controllers, you can use the following command to
+keep a development shell open inside the Rails environment:
+
+```
+$ docker-compose run --rm web /bin/bash
+```
+
+Recommended is to just keep this command open in a terminal so that you
+can always access development tasks in Rails.
 
 ### Running tests
 
