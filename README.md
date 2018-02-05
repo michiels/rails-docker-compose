@@ -31,9 +31,6 @@ Changed files compared to regular Rails app:
 
 2. Copy `Dockerfile` into your own application.
 
-3. Edit `docker-compose.yml` and change **railsdockercompose_web** to
-   **yourapplication_web** for the `image:` keys under `web:` and `sidekiq:`.
-
 Now your own application is set up and you can follow the regular development
 environment instructions:
 

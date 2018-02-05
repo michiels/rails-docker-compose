@@ -10,7 +10,6 @@ services:
       - redis-data:/data
   web:
     build: .
-    image: railsdockercompose_web
     volumes:
       - .:/myapp
     command: bundle exec rails s
@@ -38,9 +37,9 @@ services:
       - REDIS_URL=redis://redis:6379
       - SECRET_KEY_BASE=a
       - RAILS_SERVE_STATIC_FILES=true
-      - HOSTNAME=intercity.example.com
       - RAILS_LOG_TO_STDOUT=true
     depends_on:
+      - web
       - db
       - redis
 volumes:
