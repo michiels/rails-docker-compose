@@ -15,12 +15,15 @@ The stack in this repository:
 * Redis database
 * Sidekiq for background jobs
 * Standard Rails asset compilation with Yarn support
+* Headless chrome for system tests
 
 Changed files compared to regular Rails app:
 
 * database.yml
 * Dockerfile
 * docker-compose.yml
+* bin/devconsole
+* test/application_system_test_case.rb (for configuring headless chrome)
 
 ## Getting Started
 
