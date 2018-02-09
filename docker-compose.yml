@@ -26,7 +26,6 @@ services:
       - REDIS_URL=redis://redis:6379
       - RAILS_LOG_TO_STDOUT=true
   sidekiq:
-    image: railsdockercompose_web
     command: bundle exec sidekiq -q default -q mailers -q health_checks
     volumes:
       - .:/myapp
