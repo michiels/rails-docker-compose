@@ -11,7 +11,7 @@ services:
   web:
     build: .
     volumes:
-      - .:/myapp
+      - .:/app
     command: bundle exec rails s
     ports:
       - "3000:3000"
@@ -28,7 +28,7 @@ services:
   sidekiq:
     command: bundle exec sidekiq -q default -q mailers -q health_checks
     volumes:
-      - .:/myapp
+      - .:/app
     environment:
       - RAILS_ENV=development
       - DB_HOST=db

@@ -9,11 +9,11 @@ RUN echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/so
 RUN apt-get update -qq && apt-get install -y google-chrome-stable
 RUN wget -q https://chromedriver.storage.googleapis.com/2.35/chromedriver_linux64.zip -O /tmp/chromedriver_linux64.zip
 RUN cd tmp && unzip chromedriver_linux64.zip && mv chromedriver /usr/local/bin
-RUN mkdir /myapp
-WORKDIR /myapp
-ADD Gemfile /myapp/Gemfile
-ADD Gemfile.lock /myapp/Gemfile.lock
+RUN mkdir /app
+WORKDIR /app
+ADD Gemfile /app/Gemfile
+ADD Gemfile.lock /app/Gemfile.lock
 RUN bundle install
 RUN yarn install
-ADD . /myapp
+ADD . /app
 CMD bundle exec rails s
