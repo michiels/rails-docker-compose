@@ -19,23 +19,19 @@ services:
       - db
       - redis
     environment:
-      - RAILS_ENV=development
       - DB_HOST=db
       - DB_USER=postgres
-      - SECRET_KEY_BASE=a
       - REDIS_URL=redis://redis:6379
       - RAILS_LOG_TO_STDOUT=true
   sidekiq:
+    image: web
     command: bundle exec sidekiq -q default -q mailers -q health_checks
     volumes:
       - .:/app
     environment:
-      - RAILS_ENV=development
       - DB_HOST=db
       - DB_USER=postgres
       - REDIS_URL=redis://redis:6379
-      - SECRET_KEY_BASE=a
-      - RAILS_SERVE_STATIC_FILES=true
       - RAILS_LOG_TO_STDOUT=true
     depends_on:
       - web
